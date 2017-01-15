@@ -58,9 +58,10 @@ ActiveRecord::Schema.define(version: 20170107031147) do
   create_table "meetups", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "main_organizer"
     t.string   "organizers"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "sources", force: :cascade do |t|

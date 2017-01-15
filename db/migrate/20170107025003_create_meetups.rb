@@ -3,6 +3,7 @@ class CreateMeetups < ActiveRecord::Migration[5.0]
     create_table :meetups do |t|
       t.string :title
       t.text :description
+      t.string :main_organizer
       t.string :organizers
 
       t.timestamps

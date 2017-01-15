@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>Meetups</h2>
+
+  <% @meetups.each do |meetup| %>
+    <div class="col-md-12 meetup-item">
+      <h3><%= link_to meetup.title, meetup_path(meetup) %></h3>
+    </div>
+  <% end %>
+
+</div>
