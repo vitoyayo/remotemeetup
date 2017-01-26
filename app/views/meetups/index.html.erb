@@ -3,7 +3,7 @@
 
   <% @meetups.each do |meetup| %>
     <div class="col-md-12 meetup-item">
-      <h3><%= link_to meetup.title, meetup_path(meetup) %></h3>
+      <h3><%= link_to meetup.title, meetup_path(slug: meetup.slug) %></h3>
     </div>
   <% end %>
 

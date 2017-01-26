@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170107031147) do
 
   create_table "meetups", force: :cascade do |t|
     t.string   "title"
+    t.string   "slug"
     t.text     "description"
     t.string   "main_organizer"
     t.string   "organizers"
