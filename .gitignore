@@ -19,3 +19,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# local gems from bundle install --path vendor
+/vendor/ruby
+
+# coverage output
+/coverage
