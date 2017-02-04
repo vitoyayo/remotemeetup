@@ -30,9 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
+gem 'dotenv-rails'
 gem 'devise'
 
 # Active Admin
@@ -54,6 +52,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "capistrano", "~> 3.7"
+  gem 'capistrano-rails'
+  gem "sqlite3"
 end
 
 gem 'rubocop'
