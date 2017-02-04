@@ -26,3 +26,6 @@
 
 # coverage output
 /coverage
+
+# dotenv files
+/.env.*

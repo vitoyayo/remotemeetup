@@ -53,6 +53,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "capistrano", "~> 3.7"
   gem 'capistrano-rails'
+  gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem "sqlite3"
 end
 

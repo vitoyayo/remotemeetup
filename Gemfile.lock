@@ -27,6 +27,15 @@ GIT
       railties (>= 3.2, < 5.1)
       responders
 
+GIT
+  remote: https://github.com/seuros/capistrano-puma.git
+  revision: e18b30c18aceceed003e8007c268125317a17a9d
+  specs:
+    capistrano3-puma (2.0.0)
+      capistrano (~> 3.5)
+      capistrano-bundler
+      puma (~> 3.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -275,6 +284,7 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.7)
   capistrano-rails
+  capistrano3-puma!
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
