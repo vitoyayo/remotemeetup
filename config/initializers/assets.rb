@@ -20,4 +20,15 @@ Rails.application.config.assets.precompile += %w(
   jquery.magnific-popup.min.js
   magnific-popup-options.js
   main.js
+  modernizr-2.6.2.min.js
+  template/animate.css
+  template/icomoon.css
+  template/bootstrap.css
+  template/magnific-popup.css
+  template/owl.carousel.min.css
+  template/owl.theme.default.min.css
+  template/flexslider.css
+  template/style.css
+  template/animate.css
+  template/animate.css
 )
