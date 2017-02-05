@@ -34,6 +34,8 @@ set :keep_releases, 5
 
 set :rvm_ruby_version, '2.3.3'
 
+server "67.159.12.102"
+
 set :user, "web"
 set :roles, %w{app db web}
 set :ssh_options, {
@@ -41,12 +43,21 @@ set :ssh_options, {
       forward_agent: false,
       auth_methods: %w(publickey)
     }
+append :linked_files, ".env.production"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-server "67.159.12.102"
 
-# --------------------------------------------------------------------
-# Web Server config
+# ----- Rails stuff
+
+set :conditionally_migrate, true
+set :migration_role, :app
+set :migration_servers, -> { primary(fetch(:migration_role)) }
+set :assets_roles, [:web, :app]
+set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
+set :keep_assets, 2
+
+
+# ----- Web Server config
 
 set :nginx_sites_available_path, "/etc/nginx/sites-available"
 set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
