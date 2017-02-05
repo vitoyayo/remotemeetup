@@ -1,10 +1,12 @@
-server "67.159.12.102",
-  user: "web",
-  roles: %w{app db web}
-  :ssh_options, {
-    forward_agent: false,
-    auth_methods: %w(publickey)
-  }
+server "67.159.12.102"
+
+set :user, "web"
+set :roles, %w{app db web}
+set :ssh_options, {
+      user: 'web',
+      forward_agent: false,
+      auth_methods: %w(publickey)
+    }
 
 set :deploy_to, "/srv/production"
 
