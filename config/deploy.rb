@@ -32,7 +32,7 @@ set :repo_url, "https://github.com/remotemeetup/remotemeetup.git"
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-set :rvm_ruby_version, '2.3.3'
+set :rvm_ruby_version, "2.3.3"
 
 server "67.159.12.102"
 
