@@ -29,3 +29,4 @@
 
 # dotenv files
 /.env.*
+/config/database.yml
