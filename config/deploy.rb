@@ -53,3 +53,6 @@ set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
 # set :puma_preload_app, false
 # set :puma_plugins, []  #accept array of plugins
 # set :nginx_use_ssl, false
+
+set :rvm_type, :user
+set :rvm_ruby_version, '2.3.3'
