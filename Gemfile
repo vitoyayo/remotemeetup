@@ -55,6 +55,8 @@ group :development do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
+  gem 'capistrano-postgresql'
+  gem 'slackistrano'
   gem "sqlite3"
 end
 
