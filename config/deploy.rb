@@ -30,7 +30,23 @@ set :repo_url, "https://github.com/remotemeetup/remotemeetup.git"
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
+
+set :rvm_ruby_version, '2.3.3'
+
+set :user, "web"
+set :roles, %w{app db web}
+set :ssh_options, {
+      user: 'web',
+      forward_agent: false,
+      auth_methods: %w(publickey)
+    }
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+
+server "67.159.12.102"
+
+# --------------------------------------------------------------------
+# Web Server config
 
 set :nginx_sites_available_path, "/etc/nginx/sites-available"
 set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
@@ -53,5 +69,3 @@ set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
 # set :puma_preload_app, false
 # set :puma_plugins, []  #accept array of plugins
 # set :nginx_use_ssl, false
-
-set :rvm_ruby_version, '2.3.3'
