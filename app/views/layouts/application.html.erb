@@ -3,8 +3,7 @@
   <head>
     <%= csrf_meta_tags %>
 
-    <% stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <% javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <% stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <!-- Title -->
     <title>Remote Meetup</title>
@@ -129,28 +128,17 @@
     <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
   </div>
 
-  <!-- jQuery -->
-  <script src="/js/jquery.min.js"></script>
-  <!-- jQuery Easing -->
-  <script src="/js/jquery.easing.1.3.js"></script>
-  <!-- Bootstrap -->
-  <script src="/js/bootstrap.min.js"></script>
-  <!-- Waypoints -->
-  <script src="/js/jquery.waypoints.min.js"></script>
-  <!-- Stellar Parallax -->
-  <script src="/js/jquery.stellar.min.js"></script>
-  <!-- Carousel -->
-  <script src="/js/owl.carousel.min.js"></script>
-  <!-- Flexslider -->
-  <script src="/js/jquery.flexslider-min.js"></script>
-  <!-- countTo -->
-  <script src="/js/jquery.countTo.js"></script>
-  <!-- Magnific Popup -->
-  <script src="/js/jquery.magnific-popup.min.js"></script>
-  <script src="/js/magnific-popup-options.js"></script>
-  <!-- Main -->
-  <script src="/js/main.js"></script>
-
+  <%= javascript_include_tag 'jquery.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.easing.1.3', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'bootstrap.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.waypoints.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.stellar.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'owl.carousel.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.flexslider-min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.countTo', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'jquery.magnific-popup.min', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'magnific-popup-options', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'main', 'data-turbolinks-track': 'reload' %>
 
   </body>
 </html>

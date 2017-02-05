@@ -8,4 +8,16 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w(
+  jquery.min.js
+  jquery.easing.1.3.js
+  bootstrap.min.js
+  jquery.waypoints.min.js
+  jquery.stellar.min.js
+  owl.carousel.min.js
+  jquery.flexslider-min.js
+  jquery.countTo.js
+  jquery.magnific-popup.min.js
+  magnific-popup-options.js
+  main.js
+)
