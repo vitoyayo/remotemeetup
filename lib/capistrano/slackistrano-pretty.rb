@@ -3,13 +3,13 @@ module Slackistrano
 
     # Send failed message to #ops. Send all other messages to default channels.
     # The #ops channel must exist prior.
-    def channels_for(action)
-      if action == :failed
-        "#ops"
-      else
-        super
-      end
-    end
+    # def channels_for(action)
+    #   if action == :failed
+    #     "#ops"
+    #   else
+    #     super
+    #   end
+    # end
 
     # Suppress updating message.
     def payload_for_updating
@@ -24,50 +24,69 @@ module Slackistrano
     # Fancy updated message.
     # See https://api.slack.com/docs/message-attachments
     def payload_for_updated
+      emoji = if stage == :production
+        ':computer:'
+      else
+        ':hammer_and_wrench:'
+      end
+      whichbranch = if branch
+        "branch *#{branch}* "
+      end
+
       {
-        attachments: [{
-          color: 'good',
-          title: 'Integrations Application Deployed :boom::bangbang:',
-          fields: [{
-            title: 'Environment',
-            value: stage,
-            short: true
-          }, {
-            title: 'Branch',
-            value: branch,
-            short: true
-          }, {
-            title: 'Deployer',
-            value: deployer,
-            short: true
-          }, {
-            title: 'Time',
-            value: elapsed_time,
-            short: true
-          }],
-          fallback: super[:text]
-        }]
+        attachments: [
+          {
+            color: 'good',
+            title: 'Integrations Application Deployed :boom::bangbang:',
+            text: "#{emoji} #{ENV['USER']} deployed #{whichbranch}to *#{stage}* (in #{elapsed_time})"
+          }
+        ]
       }
+      # {
+      #   attachments: [
+      #     {
+      #       color: 'good',
+      #       title: 'Integrations Application Deployed :boom::bangbang:',
+      #       fields: [
+      #         {
+      #           title: ':computer: Environment',
+      #           value: "#{stage}",
+      #           short: true
+      #         }, {
+      #           title: ':gear: Branch',
+      #           value: "#{branch}",
+      #           short: true
+      #         }, {
+      #           title: ':bust_in_silhouette: Deployer',
+      #           value: "#{ENV['USER']}",
+      #           short: true
+      #         }, {
+      #           title: ':clock2: Time',
+      #           value: "#{elapsed_time}",
+      #           short: true
+      #         }
+      #       ],
+      #       fallback: ""
+      #     }
+      #   ]
+      # }
     end
 
     # Default reverted message.  Alternatively simply do not redefine this
     # method.
     def payload_for_reverted
-      super
+      payload = super
+      payload[:text] = ":leftwards_arrow_with_hook: #{payload[:text]} (in #{elapsed_time})"
+      payload
     end
 
     # Slightly tweaked failed message.
     # See https://api.slack.com/docs/message-formatting
     def payload_for_failed
       payload = super
-      payload[:text] = "OMG :fire: #{payload[:text]}"
+      payload[:text] = ":skull_and_crossbones: #{payload[:text]} (in #{elapsed_time})"
       payload
     end
 
-    # Override the deployer helper to pull the full name from the password file.
-    # See https://github.com/phallstrom/slackistrano/blob/master/lib/slackistrano/messaging/helpers.rb
-    def deployer
-      Etc.getpwnam(ENV['USER']).gecos
-    end
   end
 end

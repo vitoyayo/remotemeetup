@@ -76,6 +76,7 @@ set :puma_preload_app, true
 
 # ----- Slack announces
 set :slackistrano, {
+  klass: Slackistrano::Pretty,
   channel: '#announces',
   team: 'remotemeetup',
   token: ENV["SLACK_TOKEN"]
