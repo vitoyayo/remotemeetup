@@ -56,6 +56,8 @@ group :development do
   gem 'capistrano-rails-collection'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
+  gem 'capistrano-console'
+  gem 'capistrano-rails-console', require: false
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-postgresql'
   gem 'slackistrano'
