@@ -54,9 +54,10 @@ group :development do
   gem "capistrano", "~> 3.7"
   gem 'capistrano-rails'
   gem 'capistrano-rails-collection'
+  gem 'capistrano-rails-console', require: false
+  gem 'capistrano-faster-assets', '~> 1.0'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
-  gem 'capistrano-rails-console', require: false
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-postgresql'
   gem 'slackistrano'

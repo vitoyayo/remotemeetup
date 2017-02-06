@@ -37,6 +37,7 @@ require 'capistrano/rails/console'
 require 'capistrano/rails/collection'
 require "capistrano/bundler"
 require "capistrano/rails/assets"
+require 'capistrano/faster_assets'
 require "capistrano/rails/migrations"
 # require "capistrano/passenger"
 
@@ -47,6 +48,7 @@ require 'capistrano/puma/monit'   # if you need the monit tasks
 require 'capistrano/puma/nginx'   # if you want to upload a nginx site template
 
 require 'slackistrano/capistrano'
+require_relative 'lib/capistrano/slackistrano-pretty'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
