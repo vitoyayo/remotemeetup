@@ -54,7 +54,7 @@ group :development do
   gem "capistrano", "~> 3.7"
   gem 'capistrano-rails'
   gem 'capistrano-rails-collection'
-  # gem 'capistrano-rvm'
+  gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-postgresql'
