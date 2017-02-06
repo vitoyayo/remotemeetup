@@ -53,7 +53,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "capistrano", "~> 3.7"
   gem 'capistrano-rails'
-  gem 'capistrano-rvm'
+  gem 'capistrano-rails-collection'
+  # gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-postgresql'

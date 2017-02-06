@@ -1,3 +1,6 @@
+require 'dotenv'
+Dotenv.load('.env.local', '.env.production', '.env.development')
+
 # Load DSL and set up stages
 require "capistrano/setup"
 
@@ -26,10 +29,11 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
 #
-require "capistrano/rvm"
+# require "capistrano/rvm"
 # require "capistrano/rbenv"
 # require "capistrano/chruby"
 require "capistrano/rails"
+require 'capistrano/rails/collection'
 require "capistrano/bundler"
 require "capistrano/rails/assets"
 require "capistrano/rails/migrations"

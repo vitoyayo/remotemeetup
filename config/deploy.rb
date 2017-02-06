@@ -1,6 +1,8 @@
 # config valid only for current version of Capistrano
 lock "3.7.2"
 
+Dotenv.load
+
 set :application, "remotemeetup"
 set :repo_url, "https://github.com/remotemeetup/remotemeetup.git"
 
@@ -32,20 +34,14 @@ set :repo_url, "https://github.com/remotemeetup/remotemeetup.git"
 # Default value for keep_releases is 5
 set :keep_releases, 5
 
-set :rvm_ruby_version, "2.3.3"
-
-server "67.159.12.102"
-
-set :user, "web"
-set :roles, %w{app db web}
+server "67.159.12.102", roles: %w{app db web}, user: 'web'
 set :ssh_options, {
       user: 'web',
       forward_agent: false,
       auth_methods: %w(publickey)
     }
-append :linked_files, ".env.production"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
-
+append :linked_files, ".env.production"
 
 # ----- Rails stuff
 
@@ -53,9 +49,6 @@ set :conditionally_migrate, true
 set :migration_role, :app
 set :migration_servers, -> { primary(fetch(:migration_role)) }
 set :assets_roles, [:web, :app]
-set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
-set :keep_assets, 2
-
 
 # ----- Web Server config
 
@@ -83,7 +76,8 @@ set :nginx_sites_enabled_path, "/etc/nginx/sites-enabled"
 
 # ----- Slack announces
 set :slackistrano, {
- channel: '#announces',
- team: 'remotemeetup',
- token: ENV["SLACK_TOKEN"]
+  channel: '#announces',
+  team: 'remotemeetup',
+  token: ENV["SLACK_TOKEN"]
 }
+

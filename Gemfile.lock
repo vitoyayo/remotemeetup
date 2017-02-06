@@ -103,9 +103,8 @@ GEM
     capistrano-rails (1.2.2)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.2)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
+    capistrano-rails-collection (0.1.0)
+      capistrano-rails (~> 1.1)
     code_analyzer (0.4.7)
       sexp_processor
     coffee-rails (4.2.1)
@@ -293,7 +292,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-postgresql
   capistrano-rails
-  capistrano-rvm
+  capistrano-rails-collection
   capistrano3-puma!
   coffee-rails (~> 4.2)
   devise
