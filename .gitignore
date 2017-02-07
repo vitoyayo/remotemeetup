@@ -30,3 +30,6 @@
 # dotenv files
 /.env.*
 /config/database.yml
+
+# letsencrypt
+*.pem

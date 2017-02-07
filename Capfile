@@ -1,6 +1,8 @@
 require 'dotenv'
 Dotenv.load('.env.local', '.env.production', '.env.development')
 
+require 'colorize'
+
 # Load DSL and set up stages
 require "capistrano/setup"
 
@@ -49,6 +51,8 @@ require 'capistrano/puma/nginx'   # if you want to upload a nginx site template
 
 require 'slackistrano/capistrano'
 require_relative 'lib/capistrano/slackistrano-pretty'
+
+require 'capistrano/lets-encrypt'
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }

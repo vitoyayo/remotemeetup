@@ -60,8 +60,10 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano3-puma', github: "seuros/capistrano-puma"
   gem 'capistrano-postgresql'
+  gem 'capistrano-lets-encrypt'
   gem 'slackistrano'
   gem "sqlite3"
+  gem "colorize", '>= 0.6.0'
 end
 
 gem 'rubocop'
