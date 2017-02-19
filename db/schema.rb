@@ -49,9 +49,11 @@ ActiveRecord::Schema.define(version: 20170107031147) do
   create_table "events", force: :cascade do |t|
     t.string   "name"
     t.datetime "occurs_on"
+    t.integer  "meetup_id"
     t.integer  "source_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["meetup_id"], name: "index_events_on_meetup_id", using: :btree
     t.index ["source_id"], name: "index_events_on_source_id", using: :btree
   end
 
@@ -74,8 +76,10 @@ ActiveRecord::Schema.define(version: 20170107031147) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
+    t.integer  "meetup_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["meetup_id"], name: "index_tags_on_meetup_id", using: :btree
   end
 
 end
