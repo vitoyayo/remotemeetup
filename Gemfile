@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'dotenv-rails'
 gem 'devise'
+gem 'font-awesome-rails'
 
 # Active Admin
 gem 'activeadmin', github: 'activeadmin'
