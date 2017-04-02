@@ -85,7 +85,7 @@ set :lets_encrypt_challenge_public_path, "#{release_path}/public"
 
 # Set the path where the new certs are going to be saved
 # default value: "#{shared_path}/ssl/certs"
-set :lets_encrypt_output_path, "#{shared_path}/ssl/certs"
+set :lets_encrypt_output_path, "/etc/letsencrypt/live"
 
 # Set the local path where the certs will be saved
 # default value: "~/certs"
