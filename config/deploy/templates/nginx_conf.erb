@@ -22,8 +22,8 @@ server {
 <% if fetch(:nginx_use_ssl) -%>
   listen 443;
   ssl on;
-  ssl_certificate <%= fetch(:lets_encrypt_output_path) %>/<%= fetch(:nginx_config_name) %>.crt;
-  ssl_certificate_key <%= fetch(:lets_encrypt_output_path) %>/<%= fetch(:nginx_config_name) %>.key;
+  ssl_certificate <%= fetch(:lets_encrypt_output_path) %>/<%= fetch(:nginx_cert_name) %>/cert.pem;
+  ssl_certificate_key <%= fetch(:lets_encrypt_output_path) %>/<%= fetch(:nginx_cert_name) %>/privkey.pem;
 <% else -%>
   listen 80;
 <% end -%>
