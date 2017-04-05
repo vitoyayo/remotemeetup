@@ -33,3 +33,5 @@
 
 # letsencrypt
 *.pem
+
+.DS_Store
