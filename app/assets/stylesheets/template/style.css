@@ -683,7 +683,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-project {
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 .fh5co-project > a {
   display: block;
@@ -722,11 +722,10 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-project > a h3, .fh5co-project > a span {
   z-index: 12;
-  position: absolute;
-  right: 20px;
-  left: 20px;
-  bottom: 50px;
-  color: #fff;
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  color: #000;
   margin: 0;
   padding: 0;
   opacity: 1;
@@ -739,7 +738,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-project > a span {
   font-size: 14px;
-  bottom: 20px;
 }
 .fh5co-project > a:hover {
   -webkit-box-shadow: 0px 18px 71px -10px rgba(0, 0, 0, 0.75);
@@ -758,10 +756,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-project > a:hover h3, .fh5co-project > a:hover span {
   opacity: 1;
-  bottom: 55px;
+  bottom: 20px;
 }
 .fh5co-project > a:hover span {
-  bottom: 15px;
 }
 .fh5co-project > a:hover img {
   -webkit-transform: scale(1.1);
