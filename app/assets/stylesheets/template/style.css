@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *
 * ======================================================= */
 body {
@@ -861,12 +861,9 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-bottom: 30px;
 }
 .fh5co-staff img {
-  width: 200px;
+  width: 150px;
+  height: 40px;
   margin-bottom: 20px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
 }
 .fh5co-staff h3 {
   font-size: 24px;
